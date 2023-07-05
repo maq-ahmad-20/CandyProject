@@ -1,4 +1,4 @@
-const url = 'https://crudcrud.com/api/b271857cca6440b0a4a5b23960185e4c';
+const url = 'https://crudcrud.com/api/352808eb7fbe4347841feb622eca3707';
 
 function validateForm() {
     var name = document.getElementById('name').value;
@@ -9,17 +9,15 @@ function validateForm() {
     if (name == "") {
         alert("Candy Name is required");
         return false;
-    }
-    if (desc == "") {
+    } else if (desc == "") {
         alert("Description is reeuired");
         return false;
-    }
-    if (price <= 0) {
+    } else if (price <= 0) {
         alert("please enter correct price");
         return false;
-    }
-    if (qty <= 0) {
+    } else if (qty <= 0) {
         alert("Please Enter Correct Qty");
+        return false;
     }
 
 
@@ -71,6 +69,7 @@ function createObject(arr) {
 
 function AddCandyToAxios() {
 
+
     if (validateForm() == true) {
         var name = document.getElementById('name').value;
         var desc = document.getElementById('desc').value;
@@ -88,6 +87,7 @@ function AddCandyToAxios() {
             })
 
     }
+
     document.getElementById('name').value = "";
     document.getElementById('desc').value = "";
     document.getElementById('price').value = "";
